@@ -16,5 +16,9 @@ class Startup
         @@all << self
     end
 
+    def pivot(domain, name)
+        self.name = name
+        self.domain = domain
+    end
 
 end
