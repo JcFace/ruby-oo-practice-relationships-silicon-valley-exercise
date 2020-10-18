@@ -31,4 +31,17 @@ class Startup
         self.domain = domain
     end
 
+    def sign_contract(jesse)
+        FundingRound.new(self, jesse, "Series C", 19000000.5500)
+    end 
+
+    def num_funding_rounds
+        FundingRound.all.select {|fr| fr.startup == self}.count
+    end
+
+    def total_funds
+       startups = FundingRound.all.select {|fr| fr.startup == self}
+       startups.map {|s| s.investment}.sum
+    end
+    
 end
