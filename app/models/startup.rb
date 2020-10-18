@@ -43,5 +43,13 @@ class Startup
        startups = FundingRound.all.select {|fr| fr.startup == self}
        startups.map {|s| s.investment}.sum
     end
-    
+
+    def investors
+        FundingRound.all.map {|fr| fr.venture_capitalist}.uniq
+    end
+
+    def big_investors
+        investors = FundingRound.all.map {|fr| fr.venture_capitalist}
+        investors.select {|i| i.total_worth > 1000000000}.uniq
+    end
 end
