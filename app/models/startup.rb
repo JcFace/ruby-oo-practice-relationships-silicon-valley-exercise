@@ -31,8 +31,8 @@ class Startup
         self.domain = domain
     end
 
-    def sign_contract(jesse)
-        FundingRound.new(self, jesse, "Series C", 19000000.5500)
+    def sign_contract(venture_capitalist, type, investment)
+        FundingRound.new(self, venture_capitalist, type, investment)
     end 
 
     def num_funding_rounds

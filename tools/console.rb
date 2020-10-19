@@ -10,8 +10,9 @@ may = VentureCapitalist.new("May Valencia", 10000000000)
 jesse = VentureCapitalist.new("Jesse Vaughn", 1000000)
 Startup.domains
 funding_round_1 = FundingRound.new(defcon, may, "Series A", 100000.000)
-funding_round_2 = techie.sign_contract(jesse)
+funding_round_2 = techie.sign_contract(jesse, "Series C", 19000.55)
 funding_round_3 = FundingRound.new(defcon, may, "Series B", 15000000)
+funding_round_4 = may.offer_contract(techie, "Series B", 90000.457)
 
 binding.pry
 0 #leave this here to ensure binding.pry isn't the last line
